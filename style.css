@@ -12,8 +12,21 @@ a {
     color: #007BFF;
 }
 
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
 /* Header Styles */
 header {
+    grid-area: header;
     background-color: #4CAF50;
     color: white;
     padding: 10px 0;
@@ -25,16 +38,9 @@ header .top-content h1 {
     font-size: 24px;
 }
 
-/* Container Styles */
-.container {
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh - 50px); /* Adjust height to ensure it fits within the viewport minus header/footer */
-}
-
 /* Navigation Styles */
 .side-nav {
-    width: 200px;
+    grid-area: nav;
     background-color: #333;
     padding: 20px;
     box-sizing: border-box;
@@ -51,4 +57,30 @@ header .top-content h1 {
     margin-bottom: 10px;
 }
 
-.side-nav ul li
+.side-nav ul li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+}
+
+.side-nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Main Content Styles */
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Footer Styles */
+footer {
+    grid-area: footer;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
