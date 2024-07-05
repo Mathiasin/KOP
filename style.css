@@ -15,11 +15,11 @@ a {
 /* Grid Container */
 .grid-container {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "header header"
-        "nav main"
+        "side-nav main"
         "footer footer";
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 200px 1fr; /* Adjust the width of the navigation menu */
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
@@ -40,7 +40,7 @@ header .top-content h1 {
 
 /* Navigation Styles */
 .side-nav {
-    grid-area: nav;
+    grid-area: side-nav;
     background-color: #333;
     padding: 20px;
     box-sizing: border-box;
